@@ -1,50 +1,27 @@
 package com.project.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
+import java.time.LocalDate;
+
 
 @Entity
-@Table(schema = "Appointment")
+@Getter
+@Setter
+@ToString
+@Table
 public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
-    private String dentist;
-    @Column
-    private String patient;
-    @Column
-    private String date;
+    private LocalDate date;
+   // @OneToOne(mappedBy = "Appointment", fetch = FetchType.LAZY)
+   // @JoinColumn(name = "patient", referencedColumnName = "id")
+   // private Patient patient;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getDentist() {
-        return dentist;
-    }
-
-    public void setDentist(String dentist) {
-        this.dentist = dentist;
-    }
-
-    public String getPatient() {
-        return patient;
-    }
-
-    public void setPatient(String patient) {
-        this.patient = patient;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 }

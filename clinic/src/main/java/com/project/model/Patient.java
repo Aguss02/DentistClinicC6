@@ -1,10 +1,17 @@
 package com.project.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
-@Table(schema = "Patient")
+@Getter
+@Setter
+@ToString
+@Table
 public class Patient {
 
     @Id
@@ -19,53 +26,8 @@ public class Patient {
     @Column
     private Integer dni;
     @Column
-    private String registrationDate;
+    private LocalDate registrationDate;
+    // @OneToOne(mappedBy = "Patient", fetch = FetchType.LAZY)
+    // private Appointment appointment;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public Integer getDni() {
-        return dni;
-    }
-
-    public void setDni(Integer dni) {
-        this.dni = dni;
-    }
-
-    public String getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(String registrationDate) {
-        this.registrationDate = registrationDate;
-    }
 }

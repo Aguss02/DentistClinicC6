@@ -1,47 +1,45 @@
 package com.project.controller;
 
 import com.project.model.Dentist;
-import com.project.repository.DentistRepository;
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.project.service.impl.DentistServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/dentist")
 public class DentistController {
 
-    @Autowired
-    private DentistRepository dentistRepository;
-    private static final Logger LOGGER = Logger.getLogger(DentistController.class);
+    private final DentistServiceImpl dentistService;
+
+    public DentistController(DentistServiceImpl dentistService) {
+        this.dentistService = dentistService;
+    }
 
     @GetMapping()
     public List<Dentist> getDentists(){
-        return dentistRepository.findAll();
+        return dentistService.getAllDentists();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Dentist> findDentistById(@PathVariable long id) {
+        return dentistService.findDentistById(id);
     }
 
     @PostMapping("/add")
-    public void addDentist(@RequestBody Dentist patient){
-        dentistRepository.save(patient);
-        LOGGER.info("Dentist added");
+    public Dentist addDentist(@RequestBody Dentist dentist){
+       return dentistService.addDentist(dentist);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteDentist(@PathVariable long id) {
-        Dentist dentist = dentistRepository.findById(id).get();
-        dentistRepository.delete(dentist);
-        LOGGER.info("Dentist deleted");
+    public String deleteDentist(@PathVariable long id) {
+        return dentistService.deleteDentist(id);
     }
 
     @PutMapping("/update/{id}")
-    public void modifyDentist(@PathVariable long id, @RequestBody Dentist dentist){
-        Dentist updateDentist = dentistRepository.findById(id).get();
-        updateDentist.setSurname(dentist.getSurname());
-        updateDentist.setName(dentist.getName());
-        updateDentist.setMedicalLicense(dentist.getMedicalLicense());
-        dentistRepository.save(updateDentist);
-        LOGGER.info("Dentist updated");
+    public String updateDentist(@PathVariable long id, @RequestBody Dentist dentist){
+       return dentistService.updateDentist(id, dentist);
     }
 
 }

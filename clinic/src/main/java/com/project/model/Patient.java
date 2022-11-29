@@ -17,13 +17,13 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column(nullable = false, length = 45)
     private String surname;
-    @Column
+    @Column(nullable = false, length = 45)
     private String name;
-    @Column
+    @Column(nullable = false, length = 45)
     private String address;
-    @Column
+    @Column(nullable = false, unique = true, length = 45)
     private Integer dni;
     @Column
     private LocalDate registrationDate;

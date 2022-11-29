@@ -1,7 +1,6 @@
 package com.project.service;
 
 import com.project.model.Dentist;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;

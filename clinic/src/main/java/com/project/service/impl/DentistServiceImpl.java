@@ -31,8 +31,9 @@ public class DentistServiceImpl implements DentistService {
     public Dentist addDentist(Dentist newDentist) {
         if (newDentist != null){
             dentistRepository.save(newDentist);
+            return newDentist;
         }
-        return newDentist;
+        return null;
     }
 
     @Override
@@ -51,7 +52,7 @@ public class DentistServiceImpl implements DentistService {
             Dentist updateDentist = dentistRepository.findById(id).get();
             updateDentist.setSurname(dentist.getSurname());
             updateDentist.setName(dentist.getName());
-            updateDentist.setMedicalLicense(dentist.getMedicalLicense());
+            updateDentist.setLicense(dentist.getLicense());
             dentistRepository.save(updateDentist);
             return "Dentist with id " + id + " has been updated";
         }

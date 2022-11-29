@@ -16,12 +16,12 @@ public class Dentist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column(nullable = false, length = 45)
     private String surname;
-    @Column
+    @Column(nullable = false, length = 45)
     private String name;
-    @Column
-    private String medicalLicense;
+    @Column(nullable = false, unique = true, length = 45)
+    private String license;
 
 
 }

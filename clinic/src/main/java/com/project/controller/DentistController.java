@@ -2,6 +2,7 @@ package com.project.controller;
 
 import com.project.model.Dentist;
 import com.project.service.impl.DentistServiceImpl;
+import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.Optional;
 public class DentistController {
 
     private final DentistServiceImpl dentistService;
+    private static final Logger LOGGER = Logger.getLogger(PatientController.class);
 
     public DentistController(DentistServiceImpl dentistService) {
         this.dentistService = dentistService;

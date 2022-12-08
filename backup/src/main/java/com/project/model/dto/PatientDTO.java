@@ -14,6 +14,5 @@ public class PatientDTO {
     private Long id;
     private String surname;
     private String name;
-    private Integer dni;
 
 }

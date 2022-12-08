@@ -1,0 +1,20 @@
+ERROR   2022-12-08 18:05:03,584 [main] com.project.service.impl.DentistServiceImpl  - Dentist must contain Id in order to Update it
+INFO    2022-12-08 18:05:27,534 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:06:36,235 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:08:28,065 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:10:58,508 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:11:57,983 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:12:43,687 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:16:38,730 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 4 has been updated
+INFO    2022-12-08 18:17:36,767 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 4 has been updated
+INFO    2022-12-08 18:18:51,915 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:19:17,293 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:20:03,840 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:21:22,912 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:22:15,848 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+ERROR   2022-12-08 18:22:38,045 [http-nio-8080-exec-3] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 was not found
+INFO    2022-12-08 18:22:45,663 [http-nio-8080-exec-5] com.project.service.impl.DentistServiceImpl  - Dentist has been created
+INFO    2022-12-08 18:23:02,010 [http-nio-8080-exec-8] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:23:11,508 [http-nio-8080-exec-10] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:24:05,335 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+INFO    2022-12-08 18:24:50,098 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated

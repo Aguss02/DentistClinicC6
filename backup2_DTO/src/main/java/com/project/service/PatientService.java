@@ -1,16 +1,19 @@
 package com.project.service;
 
 
+import com.project.dto.PatientDTO;
+import com.project.exception.BadRequestException;
+import com.project.exception.NotFoundException;
 import com.project.model.Patient;
+import java.util.Set;
 
-import java.util.List;
-import java.util.Optional;
 
 public interface PatientService {
 
-    public List<Patient> getAllPatients();
-    public Optional<Patient> findPatientById(long id);
-    public Patient addPatient(Patient newPatient);
-    public String deletePatient(long id);
-    public String updatePatient(long id, Patient patient);
+     Set<PatientDTO> getAllPatients();
+     PatientDTO findPatientById(long id) throws NotFoundException;
+     Patient savePatient(Patient newPatient) throws BadRequestException;
+     Patient updatePatient(Patient patient) throws NotFoundException, BadRequestException;
+     void deletePatient(long id) throws NotFoundException;
+
 }

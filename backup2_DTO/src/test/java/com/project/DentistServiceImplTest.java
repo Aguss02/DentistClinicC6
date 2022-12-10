@@ -100,7 +100,7 @@ public class DentistServiceImplTest {
         Dentist updatedDentist = new Dentist(1l, "Test","Updated", "a2c3d10");
         dentistService.updateDentist(updatedDentist);
 
-        System.out.println(dentistService.findDentistById(1l));
+
         // Check if the values for the Dentist are equal to the ones we made
         Assertions.assertTrue(dentistService.findDentistById(1l).getName() == "Updated" || dentistService.findDentistById(1l).getSurname() == "Test");
 

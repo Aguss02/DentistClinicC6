@@ -1,11 +1,14 @@
 package com.project.controller;
 
+import com.project.dto.PatientDTO;
+import com.project.exception.BadRequestException;
+import com.project.exception.NotFoundException;
 import com.project.model.Patient;
 import com.project.service.impl.PatientServiceImpl;
 import org.springframework.web.bind.annotation.*;
 import org.apache.log4j.Logger;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/patient")
@@ -19,23 +22,23 @@ public class PatientController {
     }
 
     @GetMapping()
-    public List<Patient> getPatients(){
+    public Set<PatientDTO> getPatients(){
         return patientService.getAllPatients();
     }
 
     @PostMapping("/add")
-    public Patient addPatient(@RequestBody Patient patient){
-        return patientService.addPatient(patient);
+    public Patient savePatient(@RequestBody Patient patient) throws BadRequestException {
+        return patientService.savePatient(patient);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deletePatients(@PathVariable long id) {
+    public void deletePatients(@PathVariable long id) throws NotFoundException {
         patientService.deletePatient(id);
     }
 
     @PutMapping("/update/{id}")
-    public void modifyPatient(@PathVariable long id, @RequestBody Patient patient){
-        patientService.updatePatient(id, patient);
+    public Patient modifyPatient(@RequestBody Patient patient) throws NotFoundException, BadRequestException {
+        return patientService.updatePatient(patient);
     }
 
 }

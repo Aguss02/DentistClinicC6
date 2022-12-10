@@ -18,3 +18,11 @@ INFO    2022-12-08 18:23:02,010 [http-nio-8080-exec-8] com.project.service.impl.
 INFO    2022-12-08 18:23:11,508 [http-nio-8080-exec-10] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
 INFO    2022-12-08 18:24:05,335 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
 INFO    2022-12-08 18:24:50,098 [main] com.project.service.impl.DentistServiceImpl  - Dentist with Id 1 has been updated
+ERROR   2022-12-08 18:59:01,482 [main] com.project.service.impl.PatientServiceImpl  - Patient must contain Id in order to update it
+INFO    2022-12-08 18:59:04,653 [main] com.project.service.impl.PatientServiceImpl  - Patient has been created
+INFO    2022-12-08 18:59:55,836 [main] com.project.service.impl.PatientServiceImpl  - Patient with Id 1 has been updated
+INFO    2022-12-08 19:01:34,165 [main] com.project.service.impl.PatientServiceImpl  - Patient with Id 1 has been updated
+INFO    2022-12-08 19:01:36,335 [main] com.project.service.impl.PatientServiceImpl  - Patient with Id 1 has been deleted
+ERROR   2022-12-08 19:01:36,341 [main] com.project.service.impl.PatientServiceImpl  - Patient with Id 1 was not found
+INFO    2022-12-08 19:01:36,746 [main] com.project.service.impl.PatientServiceImpl  - Patient with Id 1 has been deleted
+INFO    2022-12-08 19:01:37,125 [main] com.project.service.impl.PatientServiceImpl  - Patient has been created

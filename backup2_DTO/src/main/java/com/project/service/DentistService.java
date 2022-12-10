@@ -11,7 +11,8 @@ public interface DentistService {
     Set<DentistDTO> getAllDentists();
     DentistDTO findDentistById(long id) throws NotFoundException;
     Dentist saveDentist(Dentist newDentist) throws BadRequestException;
-    void deleteDentist(long id) throws NotFoundException;
     Dentist updateDentist(Dentist dentist) throws NotFoundException, BadRequestException;
+    void deleteDentist(long id) throws NotFoundException;
+
 
 }

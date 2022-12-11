@@ -6,7 +6,6 @@ import com.project.exception.BadRequestException;
 import com.project.exception.ResourceNotFoundException;
 import com.project.model.Patient;
 
-import java.util.List;
 import java.util.Set;
 
 

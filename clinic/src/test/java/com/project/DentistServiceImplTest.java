@@ -11,7 +11,6 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
-
 import java.util.Objects;
 import java.util.Set;
 
@@ -21,8 +20,8 @@ import java.util.Set;
 @SpringBootTest
 public class DentistServiceImplTest {
 
-    private final DentistServiceImpl dentistService;
-    private final DentistRepository dentistRepository;
+    DentistServiceImpl dentistService;
+    DentistRepository dentistRepository;
 
     @Autowired
     public DentistServiceImplTest(DentistServiceImpl dentistService, DentistRepository dentistRepository) {

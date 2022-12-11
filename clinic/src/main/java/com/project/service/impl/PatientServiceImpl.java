@@ -56,6 +56,7 @@ public class PatientServiceImpl implements PatientService {
         return patientDTO;
     }
 
+
     @Override
     public Patient savePatient(Patient newPatient) throws BadRequestException {
 

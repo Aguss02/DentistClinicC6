@@ -22,8 +22,8 @@ import java.util.Set;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class PatientServiceImplTest {
 
-    private PatientServiceImpl patientService;
-    private PatientRepository patientRepository;
+    PatientServiceImpl patientService;
+    PatientRepository patientRepository;
 
     @Autowired
     public PatientServiceImplTest(PatientServiceImpl patientService, PatientRepository patientRepository) {
@@ -64,7 +64,7 @@ public class PatientServiceImplTest {
     public void findAllPatientsTest(){
         Set<PatientDTO> patients = patientService.getAllPatients();
         Assertions.assertFalse(patients.isEmpty());
-        Assertions.assertTrue(patients.size() == 3);
+        Assertions.assertEquals(3, patients.size());
     }
 
 
@@ -104,7 +104,7 @@ public class PatientServiceImplTest {
         patientService.updatePatient(updatedPatient);
 
         // Check if the values for the Dentist are equal to the ones we made
-        Assertions.assertTrue(Objects.equals(patientService.findPatientById(1l).getName(), "Updated") || Objects.equals(patientService.findPatientById(1l).getSurname(), "Test"));
+        Assertions.assertTrue(Objects.equals(patientService.findPatientById(1L).getName(), "Updated") || Objects.equals(patientService.findPatientById(1L).getSurname(), "Test"));
 
     }
 }

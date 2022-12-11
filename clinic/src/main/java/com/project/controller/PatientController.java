@@ -6,10 +6,9 @@ import com.project.exception.ResourceNotFoundException;
 import com.project.model.Patient;
 import com.project.service.impl.PatientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.apache.log4j.Logger;
-
-import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -18,6 +17,7 @@ public class PatientController {
 
     private final PatientServiceImpl patientService;
 
+    @Autowired
     public PatientController(PatientServiceImpl patientService) {
         this.patientService = patientService;
     }
@@ -34,18 +34,21 @@ public class PatientController {
 
 
     @PostMapping("/add")
-    public Patient savePatient(@RequestBody Patient patient) throws BadRequestException {
-        return patientService.savePatient(patient);
+    public ResponseEntity<?> savePatient(@RequestBody Patient newPatient) throws BadRequestException {
+        patientService.savePatient(newPatient);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deletePatients(@PathVariable long id) throws ResourceNotFoundException {
+    public ResponseEntity<?> deletePatients(@PathVariable long id) throws ResourceNotFoundException {
         patientService.deletePatientById(id);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
-    @PutMapping("/update/{id}")
-    public Patient modifyPatient(@RequestBody Patient patient) throws ResourceNotFoundException, BadRequestException {
-        return patientService.updatePatient(patient);
+    @PutMapping("/update")
+    public ResponseEntity<?> modifyPatient(@RequestBody Patient patient) throws ResourceNotFoundException, BadRequestException {
+        patientService.updatePatient(patient);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
 

@@ -2,14 +2,14 @@ package com.project.controller;
 
 import com.project.dto.DentistDTO;
 import com.project.exception.BadRequestException;
-import com.project.model.Dentist;
 import com.project.exception.ResourceNotFoundException;
+import com.project.model.Dentist;
 import com.project.service.impl.DentistServiceImpl;
-import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -18,6 +18,7 @@ public class DentistController {
 
     private final DentistServiceImpl dentistService;
 
+    @Autowired
     public DentistController(DentistServiceImpl dentistService) {
         this.dentistService = dentistService;
     }
@@ -38,18 +39,21 @@ public class DentistController {
     }
 
     @PostMapping("/add")
-    public Dentist addDentist(@RequestBody Dentist dentist) throws BadRequestException {
-       return dentistService.saveDentist(dentist);
+    public ResponseEntity<?> addDentist(@RequestBody Dentist dentist) throws BadRequestException {
+        dentistService.saveDentist(dentist);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteDentist(@PathVariable long id) throws ResourceNotFoundException {
+    public ResponseEntity<?> deleteDentist(@PathVariable long id) throws ResourceNotFoundException {
         dentistService.deleteDentistById(id);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @PutMapping("/update")
-    public Dentist updateDentist(@RequestBody Dentist dentist) throws ResourceNotFoundException, BadRequestException {
-       return dentistService.updateDentist(dentist);
+    public ResponseEntity<?> updateDentist(@RequestBody Dentist dentist) throws ResourceNotFoundException, BadRequestException {
+        dentistService.updateDentist(dentist);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
 

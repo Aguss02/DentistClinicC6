@@ -35,6 +35,7 @@ import java.util.*;
     public Appointment saveAppointment(Appointment appointment) throws BadRequestException, ResourceNotFoundException {
 
         if(appointment == null || appointment.getDentist() == null || appointment.getPatient() == null){
+            LOGGER.warn("Some required Data is null. You must include Dentist and Patient Id in order to add an Appointment");
             throw new BadRequestException("Some required Data is null. You must include Dentist and Patient Id in order to add an Appointment");
         } else {
             LOGGER.info("Appointment has been saved");
@@ -49,6 +50,7 @@ import java.util.*;
         Optional<Appointment> appointment = appointmentRepository.findById(id);
         AppointmentDTO appointmentDTO;
         if (appointment.isEmpty()){
+            LOGGER.error("The Appointment with id " + id + " was not found");
             throw new ResourceNotFoundException("The Appointment with id " + id + " was not found");
         } else {
             appointmentDTO = mapper.convertValue(appointment, AppointmentDTO.class);
@@ -69,6 +71,7 @@ import java.util.*;
     @Override
     public Appointment updateAppointment(Appointment appointment) throws BadRequestException {
         if(appointment.getId() == null || appointment.getDentist().getId() == null || appointment.getPatient().getId() == null){
+            LOGGER.error("The Appointment should contain the Appointment, Dentist and Patient Id in order to update it");
             throw new BadRequestException("The Appointment should contain the Appointment, Dentist and Patient Id in order to update it");
         }
         LOGGER.info("The Appointment has been updated");
@@ -78,6 +81,7 @@ import java.util.*;
     @Override
     public void deleteAppointmentById(Long id) throws ResourceNotFoundException {
         if (appointmentRepository.findById(id).isEmpty()){
+            LOGGER.error("Appointment with Id " + id + " was not found");
             throw new ResourceNotFoundException("Appointment with Id " + id + " was not found");
         }
         LOGGER.info("Appointment with Id " + id + " was deleted");

@@ -55,6 +55,7 @@ public class DentistServiceImpl implements DentistService {
         DentistDTO dentistDTO;
 
         if (dentist.isEmpty()){
+            LOGGER.error("Dentist with Id " + id + " was not found");
             throw new ResourceNotFoundException("Dentist with Id " + id + " was not found");
         } else {
             dentistDTO = mapper.convertValue(dentist, DentistDTO.class);
@@ -68,8 +69,10 @@ public class DentistServiceImpl implements DentistService {
     public Dentist saveDentist(Dentist newDentist) throws BadRequestException {
 
         if (newDentist == null) {
+            LOGGER.error("Dentist is null");
             throw new BadRequestException("Dentist is null");
         }
+
         dentistRepository.save(newDentist);
         LOGGER.info("Dentist has been created");
         return newDentist;
@@ -79,8 +82,10 @@ public class DentistServiceImpl implements DentistService {
     public Dentist updateDentist(Dentist dentist) throws ResourceNotFoundException, BadRequestException {
 
         if (dentist == null){
-            throw new ResourceNotFoundException("Dentist Is NULL");
+            LOGGER.error("Dentist Is Null");
+            throw new ResourceNotFoundException("Dentist was not found");
         } else if (dentist.getId() == null) {
+            LOGGER.error("Dentist must contain Id in order to update it");
             throw new BadRequestException("Dentist must contain Id in order to update it");
         }
 
@@ -92,6 +97,7 @@ public class DentistServiceImpl implements DentistService {
     @Override
     public void deleteDentistById(long id) throws ResourceNotFoundException {
         if (dentistRepository.findById(id).isEmpty()){
+            LOGGER.error("Dentist with Id " + id + " Was Not Found");
             throw new ResourceNotFoundException("Dentist with Id " + id + " was not found");
         }
         LOGGER.info("Dentist with Id " + id + " has been deleted");

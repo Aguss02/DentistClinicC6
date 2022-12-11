@@ -480,17 +480,3 @@ INFO    2022-12-11 19:49:51,970 [http-nio-8080-exec-3] com.project.service.impl.
 INFO    2022-12-11 19:49:53,957 [http-nio-8080-exec-4] com.project.service.impl.AppointmentServiceImpl  - Appointment has been saved
 INFO    2022-12-11 19:50:01,779 [http-nio-8080-exec-6] com.project.service.impl.AppointmentServiceImpl  - Appointment has been saved
 INFO    2022-12-11 19:50:20,214 [http-nio-8080-exec-5] com.project.service.impl.AppointmentServiceImpl  - Appointment has been saved
-INFO    2022-12-11 20:09:21,958 [http-nio-8080-exec-1] com.project.service.impl.PatientServiceImpl  - Patient has been created
-INFO    2022-12-11 20:09:46,641 [http-nio-8080-exec-6] com.project.service.impl.PatientServiceImpl  - Patient has been created
-INFO    2022-12-11 20:10:08,909 [http-nio-8080-exec-5] com.project.service.impl.AppointmentServiceImpl  - Appointment has been saved
-ERROR   2022-12-11 20:10:08,922 [http-nio-8080-exec-5] com.project.exception.GlobalExceptionHandler  - Dentist with Id 1 was not found
-INFO    2022-12-11 20:10:24,049 [http-nio-8080-exec-7] com.project.service.impl.AppointmentServiceImpl  - Appointment has been saved
-ERROR   2022-12-11 20:10:24,050 [http-nio-8080-exec-7] com.project.exception.GlobalExceptionHandler  - Dentist with Id 1 was not found
-INFO    2022-12-11 20:10:27,743 [http-nio-8080-exec-8] com.project.service.impl.DentistServiceImpl  - Dentist has been created
-INFO    2022-12-11 20:10:33,993 [http-nio-8080-exec-9] com.project.service.impl.AppointmentServiceImpl  - Appointment has been saved
-INFO    2022-12-11 20:10:39,265 [http-nio-8080-exec-10] com.project.service.impl.AppointmentServiceImpl  - Appointment has been saved
-ERROR   2022-12-11 20:10:39,266 [http-nio-8080-exec-10] com.project.service.impl.PatientServiceImpl  - Patient with Id 7 was not found
-ERROR   2022-12-11 20:10:39,267 [http-nio-8080-exec-10] com.project.exception.GlobalExceptionHandler  - Patient with Id 7 was not found
-INFO    2022-12-11 20:10:43,602 [http-nio-8080-exec-2] com.project.service.impl.AppointmentServiceImpl  - Appointment has been saved
-ERROR   2022-12-11 20:10:43,603 [http-nio-8080-exec-2] com.project.exception.GlobalExceptionHandler  - Dentist with Id 7 was not found
-ERROR   2022-12-11 20:11:00,303 [http-nio-8080-exec-1] com.project.exception.GlobalExceptionHandler  - Dentist must contain Id in order to update it
